@@ -1,0 +1,21 @@
+.container-fluid {
+  min-height: 100vh;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 8px;
+}

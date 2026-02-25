@@ -1,0 +1,11 @@
+<div class="app-wrapper d-flex flex-column min-vh-100">
+
+  <app-header *ngIf="!isAuthPage()"></app-header>
+
+  <main class="flex-fill main-bg">
+    <router-outlet></router-outlet>
+  </main>
+
+  <app-footer *ngIf="!isAuthPage()"></app-footer>
+
+</div>

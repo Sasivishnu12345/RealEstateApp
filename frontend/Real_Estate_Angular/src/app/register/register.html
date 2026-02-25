@@ -1,0 +1,78 @@
+<div class="container-fluid vh-100 d-flex align-items-center justify-content-center register-bg">
+  <div class="row w-100 m-0 justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-lg p-4 register-card">
+
+        <div class="text-center mb-4">
+          <i class="bi bi-person-plus-fill display-5 text-primary"></i>
+          <h3 class="mt-2 fw-bold">Create Account</h3>
+          <p class="text-muted">Register to continue</p>
+        </div>
+
+        <!-- Username -->
+        <div class="mb-3 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-person-fill"></i>
+          </span>
+          <input type="text"
+                 class="form-control"
+                 [(ngModel)]="username"
+                 placeholder="Username">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-envelope-fill"></i>
+          </span>
+          <input type="email"
+                 class="form-control"
+                 [(ngModel)]="email"
+                 placeholder="Email">
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-lock-fill"></i>
+          </span>
+          <input type="password"
+                 class="form-control"
+                 [(ngModel)]="password"
+                 placeholder="Password">
+        </div>
+
+        <!-- Role -->
+        <div class="mb-4 input-group">
+          <span class="input-group-text">
+            <i class="bi bi-shield-lock-fill"></i>
+          </span>
+          <select class="form-select" [(ngModel)]="role">
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+
+        <!-- Button -->
+        <div class="d-grid mb-3">
+          <button class="btn btn-primary btn-lg" (click)="register()">
+            <i class="bi bi-check-circle-fill"></i> Register
+          </button>
+        </div>
+
+        <!-- Messages -->
+        <p class="text-success text-center small">{{message}}</p>
+        <p class="text-danger text-center small">{{errorMessage}}</p>
+
+        <!-- Login Link -->
+        <div class="text-center">
+          <a routerLink="/login" class="text-decoration-none fw-bold">
+            <i class="bi bi-box-arrow-in-right"></i> Already have account? Login
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

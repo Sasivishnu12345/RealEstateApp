@@ -1,0 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+}
+
+.main-bg {
+  background: #9fb3c8;
+  flex: 1;
+}

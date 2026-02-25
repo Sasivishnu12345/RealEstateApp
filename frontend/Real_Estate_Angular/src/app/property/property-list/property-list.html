@@ -1,0 +1,65 @@
+<div class="container-fluid px-4 py-5">
+
+  <!-- Title + Create Button -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold mb-0">
+      <i class="bi bi-house-door-fill text-primary me-2"></i>
+      Property List
+    </h3>
+
+    <a routerLink="/property/create"
+       class="btn btn-primary">
+      <i class="bi bi-plus-circle me-1"></i>
+      Create Property
+    </a>
+  </div>
+
+  <!-- Card Wrapper -->
+  <div class="card shadow-sm border-0 rounded-4">
+    <div class="card-body p-4">
+
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+
+          <thead class="table-light">
+            <tr>
+              <th><i class="bi bi-building me-1"></i> Name</th>
+              <th><i class="bi bi-123 me-1"></i> Plot</th>
+              <th><i class="bi bi-geo-alt-fill me-1"></i> Location</th>
+              <th><i class="bi bi-person-fill me-1"></i> Owner</th>
+              <th class="text-center">
+                <i class="bi bi-gear-fill me-1"></i> Action
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let property of properties">
+              <td>{{property.propertyName}}</td>
+              <td>{{property.plotNo}}</td>
+              <td>{{property.location}}</td>
+              <td>{{property.ownerName}}</td>
+
+              <td class="text-center">
+
+                <button class="btn btn-warning btn-sm me-2"
+                        (click)="edit(property.id)">
+                  <i class="bi bi-pencil-fill"></i>
+                </button>
+
+                <button class="btn btn-danger btn-sm"
+                        (click)="delete(property.id)">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>

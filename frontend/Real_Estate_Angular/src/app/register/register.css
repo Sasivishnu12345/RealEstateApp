@@ -1,0 +1,16 @@
+.register-bg {
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+}
+
+.register-card {
+  border-radius: 20px;
+  border: none;
+}
+
+.input-group-text {
+  background: #f8f9fa;
+}
+
+.btn-primary {
+  border-radius: 10px;
+}

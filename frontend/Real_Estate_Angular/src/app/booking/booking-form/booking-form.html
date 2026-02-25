@@ -1,0 +1,85 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+          <!-- Title -->
+          <div class="text-center mb-4">
+            <h3 class="fw-bold">
+              <i class="bi bi-calendar-check-fill text-success me-2"></i>
+              {{ isEdit ? 'Update Booking' : 'Book Property' }}
+            </h3>
+            <p class="text-muted mb-0">
+              Select property and enter customer details
+            </p>
+          </div>
+
+          <!-- Property -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-house-door-fill me-1"></i>
+              Property
+            </label>
+            <select [(ngModel)]="booking.propertyName"
+                    (change)="filterPlots()"
+                    class="form-select">
+              <option value="" disabled>-- Select Property --</option>
+              <option *ngFor="let name of uniqueProperties"
+                      [value]="name">
+                {{ name }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Plot No -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-123 me-1"></i>
+              Plot No
+            </label>
+            <select [(ngModel)]="booking.plotNo"
+                    class="form-select">
+               <option value="" disabled>
+    -- Select Plot No --
+  </option>
+              <option *ngFor="let p of plots"
+                      [value]="p">
+                {{ p }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Customer Name -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-person-fill me-1"></i>
+              Customer Name
+            </label>
+            <input [(ngModel)]="booking.customerName"
+                   class="form-control"
+                   placeholder="Enter Customer Name" />
+          </div>
+
+          <!-- Buttons -->
+          <div class="d-flex gap-2">
+            <button (click)="save()"
+                    class="btn btn-success flex-fill">
+              <i class="bi bi-check-circle-fill me-1"></i>
+              Save
+            </button>
+
+            <a routerLink="/home"
+               class="btn btn-outline-secondary flex-fill">
+              <i class="bi bi-arrow-left-circle me-1"></i>
+              Back
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
